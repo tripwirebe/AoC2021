@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using AoC.Common;
 
 namespace AoC3
 {
@@ -9,7 +10,7 @@ namespace AoC3
         static void Main(string[] args)
         {
             Submarine sub = new Submarine();
-            string input = ReadInput(@"input\input.txt");
+            string input = Common.ReadInput(@"input\input.txt");
             string[] inputArray = input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
             SubmarineAction[] actions = new SubmarineAction[inputArray.Length];
             for (int i = 0; i < inputArray.Length; i++)
@@ -21,26 +22,7 @@ namespace AoC3
             int position = sub.GetPosition2D();
             Console.WriteLine(position);
         }
-
-
-        private static string ReadInput(string fileLocation)
-        {
-            string output = string.Empty;
-            try
-            {
-                var sr = new StreamReader(fileLocation);
-                output = sr.ReadToEnd();
-            }
-            catch (System.Exception)
-            {
-
-                throw;
-            }
-
-            return output;
-        }
-
-    }
+   }
 
     public class SubmarineAction
     {
@@ -69,7 +51,6 @@ namespace AoC3
                     case "down": this.Aim += actions[i].Value; break;
                     default:; break;
                 }
-
             }
         }
         public int GetPosition2D()
