@@ -1,6 +1,7 @@
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
+    var allText='';
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function ()
     {
@@ -8,12 +9,13 @@ function readTextFile(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                var allText = rawFile.responseText;
-                console.log(allText);
+                allText = rawFile.responseText;
             }
         }
     }
     rawFile.send(null);
+    return allText;
 }
 
-readTextFile("input.txt");
+var inputFileContent =  readTextFile("input.txt");
+console.log(inputFileContent);
