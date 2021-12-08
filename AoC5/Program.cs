@@ -92,9 +92,7 @@ namespace AoC5
                 {
                     boardArray[i / 5, i % 5] = boardValues[i];
                 }
-                bool checkRows = CheckRows(boardArray);
-                bool checkCols = CheckCols(boardArray);
-                return checkCols || checkRows;
+                return CheckRows(boardArray) || CheckCols(boardArray);
             }
 
             private bool CheckRows(bool[,] boardArray)
