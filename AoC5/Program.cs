@@ -23,7 +23,7 @@ namespace AoC5
                     if (boards[i].Board.ContainsKey(number))
                     {
                         boards[i].Board[number] = true;
-                        if (boards[i].CheckForWin() && !boards[i].Won)
+                        if (!boards[i].Won && boards[i].CheckForWin())
                         {
                             completedBoards++;
                             boards[i].Won = true;
