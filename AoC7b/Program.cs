@@ -33,6 +33,8 @@ namespace AoC7b
             // sum of the array is the total amount of fishes
             long sum = fishes.Sum();
             Console.WriteLine(sum);
+            long memory = GC.GetTotalMemory(true);
+            Console.WriteLine(memory);
         }
     }
 }
